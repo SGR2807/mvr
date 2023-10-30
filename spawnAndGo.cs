@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class spawnAndGo : MonoBehaviour
 {
-   public float speed = 5f;
+   public float speed = 14f;
     public float spawnInterval = 5f;
     public float travelDistance = 40f;
 
@@ -27,22 +27,21 @@ public class spawnAndGo : MonoBehaviour
             // Keep track of the distance traveled.
             distanceTraveled += speed * Time.deltaTime;
 
-            if (distanceTraveled >= 20f)
+            if (distanceTraveled >= travelDistance)
             {
-                newCar.transform.position = new Vector3(0.54f, 0.26f, 1.22f);
-                Vector3 newForward = Quaternion.Euler(0f, -90f, 0f) * Vector3.forward;
+                newCar.transform.position = new Vector3(1.8f, 0.56f, -18.4f);
+                Vector3 newForward = Quaternion.Euler(0f, 0f, 0f) * Vector3.forward;
                 transform.forward = newForward;
                 distanceTraveled = 0f;
                 
             }
             // Destroy the car if it has traveled the specified distance.
-            // if (distanceTraveled >= 20f)
-            // {
+            if (distanceTraveled >= 20f)
+            {
+               Vector3 newForward = Quaternion.Euler(0f, -90f, 0f) * Vector3.forward;
+                transform.forward = newForward;
                 
-            //    Vector3 newForward = Quaternion.Euler(0f, 180f, 0f) * Vector3.forward;
-            //     transform.forward = newForward;
-                
-            // }
+            }
         }
 
     }
