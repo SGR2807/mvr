@@ -8,13 +8,11 @@ public class spawnAndGo1 : MonoBehaviour
     public float spawnInterval = 5f;
     public float travelDistance = 40f;
 
-    private float timeSinceLastSpawn;
     private float distanceTraveled;
     public GameObject newCar;
 
     void Start()
     {
-        timeSinceLastSpawn = 0f;
         
     }
 
@@ -31,7 +29,7 @@ public class spawnAndGo1 : MonoBehaviour
 
             if (distanceTraveled >= travelDistance)
             {
-                newCar.transform.position = new Vector3(-21.8f, 0.1f, -1.4f);
+                newCar.transform.position = new Vector3(-21.8f, 0.4f, -1.4f);
                 Vector3 newForward = Quaternion.Euler(0f, 90f, 0f) * Vector3.forward;
                 transform.forward = newForward;
                 distanceTraveled = 0f;

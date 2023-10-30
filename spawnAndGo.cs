@@ -13,7 +13,6 @@ public class spawnAndGo : MonoBehaviour
 
     void Start()
     {
-        timeSinceLastSpawn = 0f;
         
     }
 
