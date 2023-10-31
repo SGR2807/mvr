@@ -19,7 +19,6 @@ public class spawnAndGo : MonoBehaviour
     void Update()
     {
         // Move the car forward.
-        Debug.Log(distanceTraveled);
         if (newCar != null)
         {
             transform.position += transform.forward * speed * Time.deltaTime;
