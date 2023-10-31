@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class spawnAndGo : MonoBehaviour
 {
-   public float speed = 14f;
-    public float spawnInterval = 5f;
+    public float speed = 14f;
     public float travelDistance = 40f;
 
     private float distanceTraveled;
