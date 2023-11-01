@@ -7,20 +7,23 @@ public class coll_check : MonoBehaviour
     private Vector3 initialManPosition ;
     // private Vector3 initialCarPosition ;
 
+    public TreasureSpawner treasureSpawner; 
+
     void Start()
     {
-        // Store the initial positions of the "man" and "car" game objects
-        initialManPosition = transform.position; // Assuming this script is attached to the "man" object
+        initialManPosition = transform.position; 
         // initialCarPosition = GameObject.FindGameObjectWithTag("car").transform.position;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        // Check if the collision involves the "car" object
         if (collision.gameObject.CompareTag("car"))
         {
-            // Reset the positions of the "man" and "car" to their initial positions
             transform.position = initialManPosition;
+            treasureSpawner.DestroySpawnedObjects();
+            treasureSpawner.SpawnObjects(treasureSpawner.numberOfBoxes);
+            treasureSpawner.remainingObjects = treasureSpawner.numberOfBoxes;
+            transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
             // collision.gameObject.transform.position = initialCarPosition;
         }
     }
